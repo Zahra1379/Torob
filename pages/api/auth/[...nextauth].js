@@ -10,15 +10,13 @@ export default NextAuth({
     },
     providers: [
         Credentials({
+            id: "user-password",
             async authorize(credentials) {
                 await db();
                 const {username, password} = credentials;
                 const user = await User.findOne({username});
-                if (!user) {
-                    throw new Error("User not found");
-                }
-                if (!(await verifyPassword(password, user.password))) {
-                    throw new Error("Invalid password");
+                if (!user || !(await verifyPassword(password, user.password))) {
+                    throw new Error("Invalid credentials");
                 }
                 return {id: user._id};
             }
