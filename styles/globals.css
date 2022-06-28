@@ -1,9 +1,14 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+:root {
+  --primary-white: var(--bs-white);
+  --primary-input: #212529;
+}
+
 body {
   font-family: iranyekan, serif !important;
   direction: rtl;
-  background-color: #cdcdcd;
+  background-color: #F2F3F5;
   margin: 0;
 }
 h1, h2, h3, h4, h5, h6,input, textarea {
