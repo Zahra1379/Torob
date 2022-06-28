@@ -1,13 +1,12 @@
 import '../styles/globals.css'
 import '../styles/font.css'
-import Layout from "../components/layout";
+import {SessionProvider} from "next-auth/react";
 
 function App({Component, pageProps}) {
-
-    const getLayout = Component.getLayout || (page => <Layout>{page}</Layout>);
-
     return (
-        getLayout(<Component {...pageProps} />)
+        <SessionProvider session={pageProps.session}>
+            <Component {...pageProps} />
+        </SessionProvider>
     )
 }
 
