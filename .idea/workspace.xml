@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3fb7904-57be-478d-9902-d001feb8d0db" name="Changes" comment="Design landing and main search box">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="a3fb7904-57be-478d-9902-d001feb8d0db" name="Changes" comment="Complete Login and Sign up forms">
+      <change afterPath="$PROJECT_DIR$/pages/categories/[slug].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/auth/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/layout/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/search.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/auth/[...nextauth].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/auth/[...nextauth].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/auth/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/auth/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/categories/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/categories/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/categories/[slug].js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +52,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/pages/categories" />
       <recent name="$PROJECT_DIR$/pages/api/auth" />
     </key>
   </component>
@@ -108,7 +111,7 @@
       <workItem from="1656108579721" duration="1229000" />
       <workItem from="1656171314853" duration="16424000" />
       <workItem from="1656344971052" duration="5260000" />
-      <workItem from="1656412571280" duration="19775000" />
+      <workItem from="1656412571280" duration="28085000" />
     </task>
     <task id="LOCAL-00001" summary="Create layout and initialize navbars">
       <created>1656107942303</created>
@@ -145,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656413463965</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Complete Login and Sign up forms">
+      <created>1656435346070</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656435346070</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +179,8 @@
     <MESSAGE value="Add mongoDB foundation and enable mongoose" />
     <MESSAGE value="Configure authentication endpoints and signup logic" />
     <MESSAGE value="Design landing and main search box" />
-    <option name="LAST_COMMIT_MESSAGE" value="Design landing and main search box" />
+    <MESSAGE value="Complete Login and Sign up forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Login and Sign up forms" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

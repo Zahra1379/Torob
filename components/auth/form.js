@@ -57,7 +57,7 @@ export function SignupForm({onSuccess}) {
     function onSubmit(data) {
         axios.post('/api/auth/signup', data)
             .then(res => {
-                signIn('user-password', {username: data.username, password: data.password})
+                signIn('user-password', {redirect: false, username: data.username, password: data.password})
                     .then(() => {
                         if (onSuccess) onSuccess(res.data)
                     });

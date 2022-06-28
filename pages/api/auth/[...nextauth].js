@@ -18,8 +18,14 @@ export default NextAuth({
                 if (!user || !(await verifyPassword(password, user.password))) {
                     throw new Error("Invalid credentials");
                 }
-                return {id: user._id};
+                return user;
             }
         })
-    ]
+    ],
+    callbacks: {
+        async session({session, token}) {
+            session.user.id = token.sub;
+            return session;
+        }
+    }
 })

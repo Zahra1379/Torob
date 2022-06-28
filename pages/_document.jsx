@@ -6,6 +6,7 @@ class BaseComponent extends Document {
             <Html>
                 <Head>
                     <link href="/styles/font.css" rel="stylesheet"/>
+                    <link rel="icon" href="/favicon.png"/>
                 </Head>
                 <body>
                 <Main/>
