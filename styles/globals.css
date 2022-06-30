@@ -264,3 +264,11 @@ blockquote {
 .preserve-color:hover {
     color: currentColor;
 }
+
+.cursor-pointer:hover {
+    cursor: pointer;
+}
+
+.border-none {
+    border: none;
+}

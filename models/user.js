@@ -19,6 +19,9 @@ const UserSchema = new mongoose.Schema({
     },
     markets: {
         type: [mongoose.Types.ObjectId],
+    },
+    favorites: {
+        type: [mongoose.Types.ObjectId],
     }
 })
 

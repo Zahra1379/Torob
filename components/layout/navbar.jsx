@@ -9,6 +9,7 @@ import AuthTabs from "../auth/tabs";
 import {useUser} from "../../hooks/auth";
 import {signOut} from "next-auth/react";
 import styled from "@emotion/styled";
+import {SearchBox} from "../search";
 
 const CategoryBadge = styled.a`
   text-decoration: none;
@@ -49,8 +50,13 @@ export function MainNavbar() {
                         </Nav.Link>))}
                 </Nav>}
                 <Nav className="me-auto">
-                    {user ? <Button className="m-1" variant="outline-secondary"
-                                    onClick={() => signOut({redirect: false})}>خروج</Button> :
+                    {user ? <NavDropdown title="حساب کاربری" id="basic-nav-dropdown">
+                            <Link href="/profile" passHref>
+                                <NavDropdown.Item className="text-right">حساب کاربری</NavDropdown.Item>
+                            </Link>
+                            <NavDropdown.Divider/>
+                            <NavDropdown.Item className="text-right" onClick={() => signOut({redirect: false})}>خروج</NavDropdown.Item>
+                        </NavDropdown> :
                         <Button className="m-1" variant="outline-secondary" onClick={() => setShowLoginModal(true)}>ورود
                             /
                             ثبت
@@ -63,7 +69,8 @@ export function MainNavbar() {
                 <div key={child.title} className="flex-column d-flex m-2">
                     <h6 className="m-1">{child.title}</h6>
                     {child.children.map(subChild => (
-                        <Link key={subChild} href={`/categories/${subChild}`}><CategoryBadge>{subChild}</CategoryBadge></Link>
+                        <Link key={subChild}
+                              href={`/search?category=${subChild}`}><CategoryBadge>{subChild}</CategoryBadge></Link>
                     ))}
                 </div>
             ))}
@@ -84,7 +91,6 @@ export function SearchNavbar() {
             <h4 className="my-0 mx-2 text-red">ترب</h4>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-        <Navbar.Collapse id="basic-navbar-nav">
-        </Navbar.Collapse>
+        <SearchBox className="me-auto ms-4"/>
     </Navbar>
 }
