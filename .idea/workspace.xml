@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3fb7904-57be-478d-9902-d001feb8d0db" name="Changes" comment="Create markets and add admin panel&#10;Add authorization and roles">
+    <list default="true" id="a3fb7904-57be-478d-9902-d001feb8d0db" name="Changes" comment="Add Item page and complete filters">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/layout/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/categories/[slug].js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/markets/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/markets/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/items/[itemId].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/items/[itemId].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +109,7 @@
       <workItem from="1656412571280" duration="35830000" />
       <workItem from="1656521230409" duration="1955000" />
       <workItem from="1656523203064" duration="2947000" />
-      <workItem from="1656575124830" duration="25332000" />
+      <workItem from="1656575124830" duration="28146000" />
     </task>
     <task id="LOCAL-00001" summary="Create layout and initialize navbars">
       <created>1656107942303</created>
@@ -174,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656575739064</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add Item page and complete filters">
+      <created>1656602352242</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656602352242</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +201,8 @@
     <MESSAGE value="Complete Login and Sign up forms" />
     <MESSAGE value="Complete Landing page and add favicon" />
     <MESSAGE value="Create markets and add admin panel&#10;Add authorization and roles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create markets and add admin panel&#10;Add authorization and roles" />
+    <MESSAGE value="Add Item page and complete filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Item page and complete filters" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

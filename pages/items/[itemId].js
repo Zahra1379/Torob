@@ -1,10 +1,15 @@
 import Item from "../../models/item";
 import {ItemViewSerializer} from "../../lib/serializers/item";
 import Layout from "../../components/layout";
-import {Button, Container, Table} from "react-bootstrap";
+import {Button, Container, Modal, Table} from "react-bootstrap";
 import {priceFormat} from "../../components/i18n";
+import {getUser} from "../../lib/auth";
+import {AddMarketForm} from "../../components/markets/form";
+import {useState} from "react";
 
-export default function ItemPage({item}) {
+export default function ItemPage({item, canAddMarket}) {
+    const [showAddMarket, setShowAddMarket] = useState(false);
+
     return (
         <Layout>
             <Container>
@@ -28,25 +33,43 @@ export default function ItemPage({item}) {
                 <hr/>
                 <div>
                     {item.markets.map(market => (
-                        <div className="p-3 bg-white rounded d-flex justify-content-between" key={market.id}>
+                        <div className="p-3 bg-white rounded d-flex justify-content-between border-bottom border-3" key={market.id}>
                             <div className="d-flex flex-column">
                                 <h6>{market.name}</h6>
                                 <span>{priceFormat(market.price)} تومان</span>
                             </div>
                             <Button className="bg-red border-none shadow-none px-4"
-                            onClick={() => {
-                                window.open(market.url, '_blank');
-                            }}>خرید</Button>
+                                    onClick={() => {
+                                        window.open(market.url, '_blank');
+                                    }}>خرید</Button>
                         </div>
                     ))}
+                    {canAddMarket && <Button className="my-3" onClick={() => {setShowAddMarket(true)}}>
+                        افزودن قیمت
+                    </Button>}
                 </div>
             </Container>
+            <Modal show={showAddMarket} onHide={() => {setShowAddMarket(false)}}>
+                <Modal.Header closeButton/>
+                <Modal.Body>
+                    <AddMarketForm itemId={item.id} onSuccess={() => setShowAddMarket(false)} />
+                </Modal.Body>
+            </Modal>
         </Layout>
     );
 }
 
 export async function getServerSideProps(context) {
     const {itemId} = context.query;
+    const user = await getUser(context.req, context.res);
+    if (!user) return {redirect: '/auth'};
+    console.log(user)
     const item = await Item.findById(itemId);
-    return {props: {item: ItemViewSerializer(item)}};
+    return {
+        props:
+            {
+                item: ItemViewSerializer(item),
+                canAddMarket: user.roles.includes('owner')
+            }
+    };
 }
