@@ -1,11 +1,12 @@
 import '../styles/globals.css'
 import '../styles/font.css'
 import {SessionProvider} from "next-auth/react";
+import Forbidden from "../components/layout/forbidden";
 
 function App({Component, pageProps}) {
     return (
         <SessionProvider session={pageProps.session}>
-            <Component {...pageProps} />
+            {pageProps.forbidden ? <Forbidden/> : <Component {...pageProps}/>}
         </SessionProvider>
     )
 }

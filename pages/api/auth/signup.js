@@ -21,7 +21,7 @@ export default async function SignupHandler(req, res) {
             res.status(400).json({errors: ["نام کاربری وارد شده تکراری است"]});
             return;
         }
-        const user = await User.create({username, password: await hashPassword(password), email})
+        const user = await User.create({username, password: await hashPassword(password), email, roles: ["owner", "user"]});
         res.status(201).json(user)
     }
 }

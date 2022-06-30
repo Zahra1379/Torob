@@ -13,6 +13,12 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: [true, 'email should not be empty.'],
+    },
+    roles: {
+        type: [String],
+    },
+    markets: {
+        type: [mongoose.Types.ObjectId],
     }
 })
 
